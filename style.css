@@ -1,0 +1,84 @@
+:root {
+  --white: #ffffffff;
+  --purple-100: #f2e6fa;
+  --purple-600: #8c6991;
+  --purple-950: #2f1533;
+}
+
+body,
+h1,
+p,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  height: 100vh;
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  background-size: cover;
+  background: url("./img/background-pattern-desktop.svg") no-repeat;
+  background-size: cover;
+  box-shadow: 0px -70vh 0 var(--purple-100) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq {
+  max-width: 700px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 4px 4px 20px rgba(140, 105, 145, 0.2);
+}
+
+.star {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: url("./img/icon-star.svg") no-repeat no-repeat center;
+  z-index: 100;
+  margin-right: 30px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--purple-950);
+  margin-bottom: 40px;
+}
+
+dt {
+  color: var(--purple-950);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+dt .icon {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 31px;
+  background: url("./img/icon-plus.svg") no-repeat center;
+}
+
+dt:nth-child(n + 2) {
+  margin-top: 30px;
+}
+
+dd {
+  font-weight: 400;
+  color: var(--purple-600);
+  margin-top: 20px;
+}

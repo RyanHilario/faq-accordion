@@ -34,7 +34,7 @@ body {
 .faq {
   max-width: 700px;
   background: var(--white);
-  padding: 40px;
+  padding: 60px 40px;
   border-radius: 14px;
   box-shadow: 4px 4px 20px rgba(140, 105, 145, 0.2);
 }
@@ -70,6 +70,7 @@ dt .icon {
   display: inline-block;
   width: 30px;
   height: 31px;
+  margin-left: 20px;
   background: url("./img/icon-plus.svg") no-repeat center;
 }
 
@@ -78,7 +79,16 @@ dt:nth-child(n + 2) {
 }
 
 dd {
+  display: none;
   font-weight: 400;
   color: var(--purple-600);
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+dt.active .icon {
+  background: url("./img/icon-minus.svg") no-repeat center;
+}
+
+dt.active + dd {
+  display: inline-block;
 }

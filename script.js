@@ -1,15 +1,19 @@
-// Seleciona todos as perguntas
 const dts = document.querySelectorAll("dt");
 
-// Deixa o primeiro item aberto por padrão
 dts[0].classList.add("active");
+dts[0].setAttribute("aria-expanded", "true");
 
-// Adiciona o evento de click/touch as perguntas
 dts.forEach((dt) => {
-  dt.addEventListener("pointerdown", handleFaq);
+  dt.addEventListener("pointerdown", toggleFaq);
+  dt.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleFaq({ currentTarget: dt });
+    }
+  });
 });
 
-// Adiciona a classe "active" ao elemento alvo
-function handleFaq(event) {
-  event.currentTarget.classList.toggle("active");
+function toggleFaq(event) {
+  const isActive = event.currentTarget.classList.toggle("active");
+  event.currentTarget.setAttribute("aria-expanded", isActive);
 }

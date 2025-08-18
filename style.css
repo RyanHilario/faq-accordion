@@ -29,6 +29,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  position: relative;
   z-index: 1;
 }
 
@@ -113,10 +114,6 @@ dd {
 }
 
 @media (max-width: 700px) {
-  body {
-    background-size: auto 30%;
-  }
-
   .title {
     margin-bottom: 15px;
     font-size: 3rem;

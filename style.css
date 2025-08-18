@@ -1,6 +1,7 @@
 :root {
   --white: #ffffffff;
   --purple-100: #f2e6fa;
+  --purple-400: #ac2be6;
   --purple-600: #8c6991;
   --purple-950: #2f1533;
 }
@@ -32,7 +33,7 @@ body {
 }
 
 .faq {
-  max-width: 700px;
+  max-width: 70vw;
   background: var(--white);
   padding: 60px 40px;
   border-radius: 14px;
@@ -60,9 +61,14 @@ dt {
   color: var(--purple-950);
   font-weight: 600;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  gap: 20px;
+}
+
+dt:hover {
+  color: var(--purple-400);
 }
 
 dt .icon {
@@ -70,12 +76,19 @@ dt .icon {
   display: inline-block;
   width: 30px;
   height: 31px;
-  margin-left: 20px;
   background: url("./img/icon-plus.svg") no-repeat center;
 }
 
 dt:nth-child(n + 2) {
   margin-top: 30px;
+}
+
+dt.active .icon {
+  background: url("./img/icon-minus.svg") no-repeat center;
+}
+
+dt.active + dd {
+  display: inline-block;
 }
 
 dd {
@@ -85,10 +98,13 @@ dd {
   margin-top: 10px;
 }
 
-dt.active .icon {
-  background: url("./img/icon-minus.svg") no-repeat center;
-}
+@media (max-width: 500px) {
+  dt {
+    padding-top: 20px;
+  }
 
-dt.active + dd {
-  display: inline-block;
+  dt:nth-child(n + 2) {
+    margin-top: 20px;
+    border-top: 2px solid var(--purple-100);
+  }
 }
